@@ -1,73 +1,85 @@
 /*##############################################################################
                                 Global Values
 ##############################################################################*/
-
 :root {
-
   /*Primary Colors*/
   --pale-blue: hsl(225, 100%, 94%);
-  --bright-blue:hsl(245, 75%, 52%);
-
-/*Secondary Colors*/
+  --bright-blue: hsl(245, 75%, 52%);
+  /*Secondary Colors*/
   --very-pale-blue: hsl(225, 100%, 98%);
-  --desaturated-blue:  hsl(224, 23%, 55%);
+  --desaturated-blue: hsl(224, 23%, 55%);
   --dark-blue: hsl(223, 47%, 23%);
-
   /*Typography*/
-
   --main-font: 'Red Hat Display', sans-serif;
 }
 
-
 body {
   background-image: url('images/pattern-background-mobile.svg');
-  height:100vh;
-  background-size: cover;
-  overflow:hidden;
-  background-repeat:no-repeat;
-
-  margin-top:0;
-
-
-
-
+  height: 100vh;
+  background-repeat: no-repeat;
+  margin-top: 0;
   font-family: var(--main-font);
-
+  background-color: var(--pale-blue);
+  background-size: cover;
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
 
-
-
 main {
-  display:flex;
+  display: flex;
   justify-content: center;
   align-items: center;
+  height: auto;
+}
 
+@media only screen and (min-width: 900px) {
+  body {
+    background-image: url('images/pattern-background-desktop.svg');
+    background-size: auto;
+  }
+}
+
+@media only screen and (min-width: 1450px) {
+  body {
+    background-size: cover;
+  }
+}
+
+@media only screen and (max-width: 300px) {
+  .summary-container__pricing {
+    padding-left: 0.4em;
+    padding-right: 0.4em;
+  }
+
+  .music-icon {
+    margin-right: 0.5em;
+  }
+
+  .plan-type {
+    text-align: center;
+  }
 }
 
 /*##############################################################################
                             Containers
 ##############################################################################*/
 .summary-container {
-display:flex;
-flex-direction: column;
-align-items:center;
-justify-content: center;
-height: auto;
-
-width: max(20%, 325px);
-
-border-radius: 10px;
-
-background-color: white;
-
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  width: max(10%, 375px);
+  border-radius: 10px;
+  background-color: white;
+  margin: 4em 1em 4em;
 }
 
 .summary-container__intro {
-  display:flex;
-  flex-direction:column;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items:center;
-
+  align-items: center;
 }
 
 .summary-container__pricing {
@@ -76,12 +88,8 @@ background-color: white;
   justify-content: space-around;
   background-color: var(--very-pale-blue);
   border-radius: 10px;
-
-  width: min(80%,290px);
-  margin:1.5em;
+  width: min(80%, 290px);
 }
-
-
 
 /*##############################################################################
                               Typography
@@ -92,43 +100,63 @@ h1 {
   font-size: 1.5em;
 }
 
+.intro-paragraph {
+  font-weight: 500;
+  margin-top: 0;
+  padding-left: 2em;
+  padding-right: 2em;
+  text-align: center;
+}
+
 p {
   font-family: var(--main-font);
   color: var(--desaturated-blue);
-  line-height:25px;
 }
 
-.intro-paragraph {
-  font-weight: 500;
-
-}
-
-.plan-type  {
-  display:flex;
-  justify-content:center;
-  font-weight:900;
+.plan-type {
+  display: flex;
+  justify-content: center;
+  font-weight: 900;
   font-size: 1em;
   color: var(--dark-blue);
 }
 
 .change-plan {
-
-  font-size:12px;
+  font-size: 12px;
   color: var(--bright-blue);
   font-family: var(--main-font);
   font-weight: 700;
 }
 
+.change-plan:hover {
+  color: hsl(245, 75%, 65%);
+  text-decoration: none;
+}
+
+.change-plan:focus {
+  outline: 1px solid hsl(245, 75%, 65%);
+  text-decoration: none;
+}
+
 .cancel-order {
- color:var(--desaturated-blue);
- font-weight:700;
- text-decoration:none;
+  color: var(--desaturated-blue);
+  font-weight: 700;
+  text-decoration: none;
+  margin: 2em 2em;
+}
+
+.cancel-order:hover,
+.cancel-order:focus {
+  color: var(--dark-blue);
+  font-weight: 900;
+  outline: none;
 }
 
 .attribution {
-  font-size: 11px;
+  font-size: 1em;
   text-align: center;
 }
+
 .attribution a {
   color: hsl(228, 45%, 44%);
 }
@@ -136,29 +164,35 @@ p {
 /*##############################################################################
                               Components
 ##############################################################################*/
-
 .btn-checkout {
   height: 2.5em;
   background-color: var(--bright-blue);
   font-family: var(--main-font);
   font-size: 16px;
-  font-weight:700;
+  font-weight: 700;
   color: var(--very-pale-blue);
   border-radius: 10px;
-  width: min(80%,290px);
-
-  height:50px;
-
-
+  width: min(80%, 290px);
+  margin-top: 1.5em;
+  height: 50px;
   border: 0;
+  cursor: pointer;
+  box-shadow: 0 20px 25px hsl(245, 75%, 65%, 0.3);
 }
 
+.btn-checkout:hover {
+  background: hsl(245, 75%, 65%);
+  border: 0;
+  transform: perspective(1000px) translateZ(25px);
+  transform-style: preserve-3d;
+  transition: linear .3s;
+}
 
 /*##############################################################################
                               Images
 ##############################################################################*/
 .hero-image {
-background-size: cover;
-width: 100%;
-
+  background-size: cover;
+  width: 100%;
+  border-radius: 10px 10px 0px 0px;
 }
