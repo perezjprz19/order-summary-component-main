@@ -31,7 +31,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://perezjprz19.github.io/order-summary-component-main/)
+- Live Site URL: [https://perezjprz19.github.io/order-summary-component-main/](https://your-live-site-url.com)
 
 ## My process
 
