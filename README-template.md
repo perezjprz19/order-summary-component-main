@@ -26,12 +26,12 @@ Users should be able to:
 ### Screenshot
 
 ![](./images/order-summary-375px.png)
-![](./images\order-summary-1440px.png)
+![](./images/order-summary-1440px.png)
 
 ### Links
 
 - Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [Add live site URL here](https://perezjprz19.github.io/order-summary-component-main/)
 
 ## My process
 
